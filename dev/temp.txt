@@ -1,6 +1,5 @@
+		- 
 import { FormEvent } from "react";
-
-export const PageWelcome = () => {
 
 	const handleFormSubmit = (event : FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -40,4 +39,3 @@ export const PageWelcome = () => {
 			</fieldset>
 		</form>
 	);
-};
