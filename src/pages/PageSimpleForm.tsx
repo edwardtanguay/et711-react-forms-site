@@ -1,10 +1,34 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormEvent } from "react";
+import axios, { AxiosResponse } from "axios";
 
 export const PageSimpleForm = () => {
 	const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		const data = new FormData(event.target as HTMLFormElement);
-		console.log(data);
+		const formData = new FormData(event.target as HTMLFormElement);
+		const employee = JSON.stringify(Object.fromEntries(formData));
+		(async () => {
+			const headers = {
+				"Access-Control-Allow-Origin": "*",
+				"Content-Type": "application/json",
+			};
+			try {
+				const response: AxiosResponse = await axios.post(
+					"http://localhost:4801/employees",
+					employee,
+					{ headers }
+				);
+
+				if (response.status === 201) {
+					// non-React hack: reload page to clear form
+					window.location.reload();
+				} else {
+					console.log(`ERROR: ${response.status}`);
+				}
+			} catch (error: any) {
+				console.log(`ERROR: ${error.message}`);
+			}
+		})();
 	};
 
 	return (
@@ -39,7 +63,7 @@ export const PageSimpleForm = () => {
 				</div>
 
 				<div className="mb-4 flex gap-2">
-					<label className="w-[10rem]" htmlFor="hireDate" >
+					<label className="w-[10rem]" htmlFor="hireDate">
 						Hire Date:
 					</label>
 					<input type="date" id="hireDate" name="hireDate" required />
@@ -62,7 +86,7 @@ export const PageSimpleForm = () => {
 				</div>
 
 				<div className="mb-4 flex gap-2">
-					<label className="w-[10rem]" htmlFor="notes" >
+					<label className="w-[10rem]" htmlFor="notes">
 						Notes:
 					</label>
 					<textarea id="notes" name="notes"></textarea>
