@@ -1,3 +1,49 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "firstName": "Hank",
+      "lastName": "Gralphan",
+      "age": "72",
+      "hireDate": "2020-01-01",
+      "employeeNumber": "D-2837",
+      "notes": "notes here",
+      "id": 1
+    },
+    {
+      "firstName": "John",
+      "lastName": "Grang",
+      "age": "43",
+      "hireDate": "2001-01-01",
+      "employeeNumber": "D-8722",
+      "notes": "notes",
+      "id": 2
+    },
+    {
+      "firstName": "Roger",
+      "lastName": "Hanjan",
+      "age": "23",
+      "hireDate": "2003-02-02",
+      "employeeNumber": "D-2837",
+      "notes": "New employee.",
+      "id": 3
+    },
+    {
+      "firstName": "Angela",
+      "lastName": "Rankster",
+      "age": "34",
+      "hireDate": "2003-03-03",
+      "employeeNumber": "M-8372",
+      "notes": "Just hired.",
+      "id": 4
+    },
+    {
+      "firstName": "Randy",
+      "lastName": "Ashton",
+      "age": "32",
+      "hireDate": "2020-02-02",
+      "employeeNumber": "D-2834",
+      "notes": "Has insurance.",
+      "id": 5
+    }
+  ]
 }

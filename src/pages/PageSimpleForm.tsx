@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormEvent } from "react";
 import axios, { AxiosResponse } from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export const PageSimpleForm = () => {
+	const navigate = useNavigate();
+
 	const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const formData = new FormData(event.target as HTMLFormElement);
@@ -20,8 +24,7 @@ export const PageSimpleForm = () => {
 				);
 
 				if (response.status === 201) {
-					// non-React hack: reload page to clear form
-					window.location.reload();
+					navigate('/employees');
 				} else {
 					console.log(`ERROR: ${response.status}`);
 				}
