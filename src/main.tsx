@@ -9,6 +9,7 @@ import "./index.scss";
 import { PageSimpleForm } from "./pages/PageSimpleForm.tsx";
 import { PageEmployees } from "./pages/PageEmployees.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
+import * as config from './config.ts';
 
 const router = createBrowserRouter([
 	{
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/",
-				element: <Navigate to="/simple-form" replace />,
+				element: config.environment === 'development' ? <Navigate to="/simple-form" replace /> : <Navigate to="/employees" replace />,
 			},
 		],
 	},
