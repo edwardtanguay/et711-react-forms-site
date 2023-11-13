@@ -1,4 +1,4 @@
-import db from '../data/db.json';
+import db from "../data/db.json";
 
 const employees = db.employees;
 
@@ -42,13 +42,27 @@ export const PageEmployees = () => {
 								{employees.map((employee) => {
 									return (
 										<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-											<td className="px-6 py-4">{employee.id}</td>
-											<td className="px-6 py-4">{employee.firstName}</td>
-											<td className="px-6 py-4">{employee.lastName}</td>
-											<td className="px-6 py-4">{employee.age}</td>
-											<td className="px-6 py-4">{employee.hireDate}</td>
-											<td className="px-6 py-4">{employee.employeeNumber}</td>
-											<td className="px-6 py-4">{employee.notes}</td>
+											<td className="px-6 py-4">
+												{employee.id}
+											</td>
+											<td className="px-6 py-4">
+												{employee.firstName}
+											</td>
+											<td className="px-6 py-4">
+												{employee.lastName}
+											</td>
+											<td className="px-6 py-4">
+												{employee.age}
+											</td>
+											<td className="px-6 py-4">
+												{employee.hireDate}
+											</td>
+											<td className="px-6 py-4">
+												{employee.employeeNumber}
+											</td>
+											<td className="px-6 py-4">
+												{employee.notes}
+											</td>
 										</tr>
 									);
 								})}

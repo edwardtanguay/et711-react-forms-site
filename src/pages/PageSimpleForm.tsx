@@ -2,7 +2,7 @@
 import { FormEvent } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
-
+import * as config from "../config";
 
 export const PageSimpleForm = () => {
 	const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const PageSimpleForm = () => {
 				);
 
 				if (response.status === 201) {
-					navigate('/employees');
+					navigate("/employees");
 				} else {
 					console.log(`ERROR: ${response.status}`);
 				}
@@ -36,6 +36,7 @@ export const PageSimpleForm = () => {
 
 	return (
 		<form onSubmit={handleFormSubmit}>
+			<p>environment is: [{config.environment}]</p>
 			<fieldset className="border border-gray-500 p-4 w-full sm:w-40 rounded">
 				<legend>New Employee</legend>
 
