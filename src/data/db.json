@@ -44,6 +44,24 @@
       "employeeNumber": "D-2834",
       "notes": "Has insurance.",
       "id": 5
+    },
+    {
+      "firstName": "dfg",
+      "lastName": "fg",
+      "age": "23",
+      "hireDate": "2023-11-07",
+      "employeeNumber": "D-2834",
+      "notes": "sdf",
+      "id": 6
+    },
+    {
+      "firstName": "Neal",
+      "lastName": "Newton",
+      "age": "23",
+      "hireDate": "2003-02-20",
+      "employeeNumber": "D-8278",
+      "notes": "notes",
+      "id": 7
     }
   ]
 }
